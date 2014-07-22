@@ -1,7 +1,7 @@
 table-drag-sort-resize
 ======================
 
-Adds basic functionality to html tables: dragging, sorting, resizing
+Adds basic functionality to html tables: dragging, sorting, resizing.
 
 !!WORK IN PROGRESS!!
 
@@ -68,7 +68,7 @@ Any html tables which have a thead and tbody tag can be used, e.g.
 
 #####Supported Sorting Types
 
-See [Javascript Natural Sort Algorithm With Unicode Support](http://www.overset.com/2008/09/01/javascript-natural-sort-algorithm-with-unicode-support/) for a detailed description of supported sorting types
+See [Javascript Natural Sort Algorithm With Unicode Support](http://www.overset.com/2008/09/01/javascript-natural-sort-algorithm-with-unicode-support/) for a detailed description of supported sorting types.
 
 ###How to use
 
