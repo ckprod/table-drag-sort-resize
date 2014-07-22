@@ -1,7 +1,7 @@
 table-drag-sort-resize
 ======================
 
-Adds basic functionality to html tables: Dragging, Sorting, Resizing
+Adds basic functionality to html tables: dragging, sorting, resizing
 
 !!WORK IN PROGRESS!!
 
