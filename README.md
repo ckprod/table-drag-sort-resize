@@ -66,7 +66,7 @@ Any html tables which have a thead and tbody tag can be used, e.g.
 </table>
 ```
 
-####Supported Sorting Types
+#####Supported Sorting Types
 
 See [Javascript Natural Sort Algorithm With Unicode Support](http://www.overset.com/2008/09/01/javascript-natural-sort-algorithm-with-unicode-support/) for a detailed description of supported sorting types
 
