@@ -76,12 +76,12 @@ In the head section of your html file put
 
 ```html
 <link href='style-table-drag-sort-resize.css' rel='stylesheet'>
-<script src='table-drag-sort-resize.min.js'></script>
 ```
 
 Just before the end of your body section put
 
 ```html
+<script src='table-drag-sort-resize.min.js'></script>
 <script>
   new TableDragSortResize(document.getElementById('example'));
 </script>
