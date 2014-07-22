@@ -11,7 +11,7 @@ See ???? for a live demo.
 
 ###Description
 
-table-drag-sort-resize is a small javascript component which adds basic functionality to html tables: Dragging, Sorting, Resizing. It is completely independent from other javascript libraries but should work side-by-side with any other library like jQuery,etc.
+table-drag-sort-resize is a small javascript component which adds basic functionality to html tables: dragging, sorting, resizing. It is completely independent from other javascript libraries but should work side-by-side with any other library like jQuery,etc.
 
 Any html tables which have a thead and tbody tag can be used, e.g.
 
