@@ -1,12 +1,9 @@
-.sar-table th,td {
+.sar-table {
     font-family: verdana, sans-serif;
     text-align:left;
     vertical-align:top;
     border:1px solid #CCC;
-    font-size:0.9em;
     padding:3px;
-}
-.sar-table {
     font-size: 10px;
     border-collapse:collapse;
     font-family:Tahoma,Helvetica,Arial,sans-serif;
