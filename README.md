@@ -5,9 +5,9 @@ Adds basic functionality to html tables: dragging, sorting, resizing.
 
 !!WORK IN PROGRESS!!
 
-###Demo
+###Sample
 
-See ???? for a live demo.
+See [here](http://irhc.github.io/table-drag-sort-resize) for a sample.
 
 ###Description
 
