@@ -67,12 +67,41 @@
     </table>
 
 	<h4>Sample 2</h4>
+	
+      <table id="sample2" class="sar-table">
+        <thead>
+          <tr>
+            <th>TIME</th>
+
+            <th>%user</th>
+            <th>%nice</th>
+            <th>%system</th>
+            <th>%iowait</th>
+            <th>%idle</th>                     
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>12:10:01 AM</td><td>28.86</td><td>0.04</td><td>1.65</td><td>0.08</td><td>69.36</td>
+          </tr>
+          <tr>
+            <td>12:20:01 AM</td><td>26.54</td><td>0.00</td><td>1.64</td><td>0.08</td><td>71.74</td>
+
+          </tr> 
+          <tr>
+            <td>12:30:01 AM</td><td>29.73</td><td>0.00</td><td>1.66</td><td>0.09</td><td>68.52</td>
+          </tr>
+        </tbody>
+      </table>
+	
 	<h4>Sample 3</h4>
 	<h4>Sample 4</h4>
 	
 	<script src='table-drag-sort-resize.min.js'></script>
 	<script>
 	  new TableDragSortResize(document.getElementById('sample1'));
+	  new TableDragSortResize(document.getElementById('sample2'));
 	</script>
 </body>
 
