@@ -16,7 +16,7 @@ table-drag-sort-resize is a small javascript component which adds basic function
 Any html tables which have a thead and tbody tag can be used, e.g.
 
 ```html
-<table id="example" cellpadding="0" cellspacing="0" border="0" style="font-family: Segoe UI, sans-serif; font-size: 10pt;">
+<table id="example">
     <thead>
         <tr>
             <th>Name</th>
@@ -75,7 +75,7 @@ See [Javascript Natural Sort Algorithm With Unicode Support](http://www.overset.
 In the head section of your html file put
 
 ```html
-<link href='style-table-drag-sort-resize.css' rel='stylesheet'>
+<link href='table-drag-sort-resize.css' rel='stylesheet'>
 ```
 
 Just before the end of your body section put
