@@ -7,7 +7,7 @@ Adds basic functionality to html tables: dragging, sorting, resizing.
 
 ###Sample
 
-See [here](http://irhc.github.io/table-drag-sort-resize) for a sample.
+See [here](http://irhc.github.io/table-drag-sort-resize) for some samples.
 
 ###Description
 
