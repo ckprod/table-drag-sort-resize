@@ -20,8 +20,8 @@
     }
   .sort th {
     background:#eee;
-    background:-webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eee));
-    background:-moz-linear-gradient(top, #f6f6f6, #eee);
+    //background:-webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eee));
+    //background:-moz-linear-gradient(top, #f6f6f6, #eee);
     text-shadow:0 1px 0 #fff;
     font-weight:bold;
     vertical-align:bottom;
