@@ -13,16 +13,9 @@
     cursor:col-resize;
 }
 .resize-text {
-    text-overflow: ellipsis !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-}
-.drag-base {
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    cursor: default;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .sort-header {
     background-repeat: no-repeat !important;
