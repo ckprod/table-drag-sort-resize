@@ -1,7 +1,7 @@
 table-drag-sort-resize
 ======================
 
-Adds basic functionality to html tables: dragging, sorting, resizing.
+Dragging (drag'n'drop), resizing and sorting columns of html tables. Simple and small standalone javascript component.
 
 !!INITIALIZATION IN PROGRESS!!
 
@@ -66,8 +66,9 @@ Any html tables which have a thead and tbody tag can be used, e.g.
 </table>
 ```
 
-#####Supported Sorting Types
+#####Supported sorting types
 
+Many different column types can be sorted: numbers, text, web addresses, dates and many more.
 See [Javascript Natural Sort Algorithm With Unicode Support](http://www.overset.com/2008/09/01/javascript-natural-sort-algorithm-with-unicode-support/) for a detailed description of supported sorting types.
 
 ###How to use
@@ -78,7 +79,7 @@ In the head section of your html file put
 <link href='table-drag-sort-resize.css' rel='stylesheet'>
 ```
 
-Just before the end of your body section put
+Just before the end of your body section simply put
 
 ```html
 <script src='table-drag-sort-resize.min.js'></script>
@@ -87,20 +88,34 @@ Just before the end of your body section put
 </script>
 ```
 
+If you don't want to use default options, pass in an options object as second parameter
+
+```html
+  new TableDragSortResize(document.getElementById('example'), {distance: 100, minWidth: 60, restoreState: true});
+```
+
+###Options
+
+- distance (default 0): Sets the radius of a circle, where no drag action is triggered as long as mouse movements are within the circle.
+- minWidth (default 30): Sets the minimum width of the cells.
+- restoreState (default true): localStorage is used to remember the last width of the cells if true.
+
+###Supported browsers
+
+- Internet Explorer 8 and newer
+- Opera
+- Chrome
+- Firefox
+- Safari 5.1.7 (and highly possible newer)
+
 ###References
 
 This small javascript component uses or is based on other javascript projects and code snippets:
 
-- [Resizable Table Columns Demo](http://bz.var.ru/comp/web/resizable.html)
-- [tablesort by tristen](http://tristen.ca/tablesort/demo/)
-- [jquery dragtable by akottr](http://akottr.github.io/dragtable/)
-- [dragtable: Visually reorder all your table columns](http://www.danvk.org/wp/dragtable/)
-- [Javascript Natural Sort Algorithm With Unicode Support](http://www.overset.com/2008/09/01/javascript-natural-sort-algorithm-with-unicode-support/)
-- [mouse.js by jQuery](https://github.com/jquery/jquery-ui/blob/master/ui/mouse.js)
-- [Reordering arrays on stackoverflow](http://stackoverflow.com/questions/2440700/reordering-arrays)
-- [addEvent() recoding contest entry](http://ejohn.org/apps/jselect/event.html)
-- [Get an Element's Position Using JavaScript](http://www.kirupa.com/html5/get_element_position_using_javascript.htm)
-- [Swapping table columns](https://groups.google.com/forum/#!msg/comp.lang.javascript/durZ17iSD0I/rnH2FqrvkooJ)
+- [mouse-handler](https://github.com/irhc/mouse-handler)
+- [table-drag](https://github.com/irhc/table-drag)
+- [table-sort](https://github.com/irhc/table-sort)
+- [table-resize](https://github.com/irhc/table-resize)
 
 ### Licence
 
