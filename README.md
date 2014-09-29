@@ -3,8 +3,6 @@ table-drag-sort-resize
 
 Dragging (drag'n'drop), resizing and sorting columns of html tables. Simple and small standalone javascript component.
 
-!!INITIALIZATION IN PROGRESS!!
-
 ###Samples
 
 See [here](http://irhc.github.io/table-drag-sort-resize) for some samples.
