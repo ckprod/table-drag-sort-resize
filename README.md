@@ -94,7 +94,7 @@ If you don't want to use default options, pass in an options object as second pa
 
 ###Options
 
-- distance (default 0): Sets the radius of a circle, where no drag action is triggered as long as mouse movements are within the circle.
+- distance (default 10): Sets the radius of a circle, where no drag action is triggered as long as mouse movements are within the circle.
 - minWidth (default 30): Sets the minimum width of the cells.
 - restoreState (default true): localStorage is used to remember the last width of the cells if true.
 
