@@ -566,7 +566,8 @@ function benchmark(text, time) {
                     clientBottom = offsetHeight - clientHeight - clientTop,
                     paddingTop = numericProperty(elementStyleProperty(cell, 'padding-top')),
                     paddingBottom = numericProperty(elementStyleProperty(cell, 'padding-bottom')),
-                    computedCellHeight = cell.getBoundingClientRect().height - clientTop - clientBottom - paddingTop - paddingBottom,
+					temp = cell.getBoundingClientRect(),
+                    computedCellHeight = temp.bottom - temp.top - clientTop - clientBottom - paddingTop - paddingBottom,
 					borderLeftWidth = borderCollapse ? (clientRight + clientLeft) : clientLeft,
 					borderTopWidth = borderCollapse ? (clientTop + clientBottom) : clientTop,
 					borderRightWidth = borderCollapse ? (clientRight + clientLeft) : clientRight,
@@ -842,7 +843,7 @@ function benchmark(text, time) {
             var cell = dragSortHandler.hr.cells[i];
             
 			// check and set space for sort order image
-            var paddingTop = parseInt(window.getComputedStyle(cell, null).getPropertyValue("padding-top"));
+            var paddingTop = numericProperty(elementStyleProperty(cell, 'padding-top'));
             cell.style.paddingTop=(paddingTop>6?paddingTop:6)+'px';
             cell.className += ' sort-header';
 			
