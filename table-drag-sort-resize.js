@@ -689,6 +689,7 @@
 		//set default options
 		this.options.minWidth = 30;
 		this.options.restoreState = true;
+		this.options.fixed = false;
 		
         // set options
 		var newOptions = {};
@@ -724,7 +725,7 @@
             }
 			
 			if (this.options.restoreState)
-				restoreState('table-resize', this.table, 'resize');
+				restoreState('table-drag-sort-resize', this.table, 'resize');
 		};
 
 		// the overriden placeholder methods
@@ -733,12 +734,19 @@
 			// initial column
             this.ic = eventTarget(event).parentNode.parentNode.cellIndex;
             var initialColumn = this.ic,
-                cell = this.hr.cells[initialColumn],
-                width = numericProperty(cell.style.width);
+				fixed = this.options.fixed,
+				cell = [],
+				width = [];
+			for (var i = 0; i < 2; i++) {
+				cell[i] = this.hr.cells[initialColumn+(i?fixed:i)];
+				width[i] = numericProperty(cell[i].style.width);
+			}
 		
             for (var i = 0; i < this.nr; i++) {
-                cell = this.table.rows[i].cells[initialColumn];
-                cell.style.maxWidth = cell.style.width = width;
+				for (var j = 0; j <= fixed; j++) {
+					cell = this.table.rows[i].cells[initialColumn+j];
+					cell.style.maxWidth = cell.style.width = width[j] + 'px';
+				}
             }
 
             // replace current document cursor
@@ -750,18 +758,25 @@
 		ResizeHandler.prototype._mouseDrag = function (event) {
             var dist = eventPageX(event) - eventPageX(this._mouseDownEvent),
                 initialColumn = this.ic,
-                cell = this.hr.cells[initialColumn],
-                width = numericProperty(cell.style.width);
+				fixed = this.options.fixed,
+				cell = [],
+				width = [];
+			for (var i = 0; i < 2; i++) {
+				cell[i] = this.hr.cells[initialColumn+(i?fixed:i)];
+				width[i] = numericProperty(cell[i].style.width);
+			}
 
-            if (width <= -dist) {
+            if (width[0] <= -dist || width[1] <= dist) {
                 this._mouseStopDrag(event);
             } else {
-                var newWidth = width + dist;
-                if (newWidth > this.options.minWidth) {
+                var newWidth = [width[0] + dist, width[1] - dist];
+                if (newWidth[0] > this.options.minWidth && newWidth[1] > this.options.minWidth) {
 
                     for (var i = 0; i < this.nr; i++) {
-                        cell = this.table.rows[i].cells[initialColumn];
-						cell.style.maxWidth = cell.style.width = newWidth + 'px';
+						for (var j = 0; j <= fixed; j++) {
+							cell = this.table.rows[i].cells[initialColumn+j];
+							cell.style.maxWidth = cell.style.width = newWidth[j] + 'px';
+						}
                     }
 
 					this._mouseDownEvent = event;
@@ -803,11 +818,12 @@
             return;
         }
 
-        var dragSortHandler = new DragSortHandler(table, options || {});
-		var resizeHandler = new ResizeHandler(table, options || {});
+		options = options || {};
+        var dragSortHandler = new DragSortHandler(table, options);
+		var resizeHandler = new ResizeHandler(table, options);
 				
         // attach handlers to each cell of the header row.
-        for (var i = 0; i < dragSortHandler.nc; i++) {
+        for (var i = 0; i < ((options.fixed)?(dragSortHandler.nc-1):dragSortHandler.nc); i++) {
             var cell = dragSortHandler.hr.cells[i];
             
 			// check and set space for sort order image
